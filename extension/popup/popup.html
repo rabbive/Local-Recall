@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/popup.css">
+  <title>LocalRecall</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>LocalRecall</h1>
+      <div class="status" id="connectionStatus">
+        <span class="status-icon"></span>
+        <span class="status-text">Checking connection...</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="loading-state" id="loadingState">
+        <div class="spinner"></div>
+        <p>Processing content...</p>
+      </div>
+
+      <div class="summary-container" id="summaryContainer">
+        <div class="summary-header">
+          <h2>Summary</h2>
+          <div class="summary-actions">
+            <button id="copyBtn" class="icon-button" title="Copy to clipboard">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3zm0 2H5v12h10v-3H8a1 1 0 0 1-1-1V8zm2-2v10h10V4H9z"/></svg>
+            </button>
+            <button id="saveBtn" class="icon-button" title="Save to LocalRecall">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 3h14l2.707 2.707a1 1 0 0 1 .293.707V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm3 1v5h9V4H7zm-1 8v7h12v-7H6z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="summary-content" id="summaryContent"></div>
+      </div>
+
+      <div class="action-buttons">
+        <button id="conciseSummaryBtn" class="primary-button">Concise Summary</button>
+        <button id="detailedSummaryBtn" class="secondary-button">Detailed Summary</button>
+      </div>
+
+      <div class="key-points-container" id="keyPointsContainer">
+        <h3>Key Points</h3>
+        <ul class="key-points-list" id="keyPointsList"></ul>
+      </div>
+
+      <div class="tags-container">
+        <h3>Tags</h3>
+        <div class="tags-input-container">
+          <input type="text" id="tagInput" placeholder="Add tags...">
+          <button id="addTagBtn">Add</button>
+        </div>
+        <div class="tags-list" id="tagsList"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button id="settingsBtn" class="icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M9.954 2.21a9.99 9.99 0 0 1 4.091-.002A3.993 3.993 0 0 0 16 5.07a3.993 3.993 0 0 0 3.457.261A9.99 9.99 0 0 1 21.5 8.876 3.993 3.993 0 0 0 20 12c0 1.264.586 2.391 1.502 3.124a10.043 10.043 0 0 1-2.046 3.543 3.993 3.993 0 0 0-3.456.261 3.993 3.993 0 0 0-1.954 2.86 9.99 9.99 0 0 1-4.091.004A3.993 3.993 0 0 0 8 18.927a3.993 3.993 0 0 0-3.457-.26A9.99 9.99 0 0 1 2.5 15.121 3.993 3.993 0 0 0 4 11.999a3.993 3.993 0 0 0-1.502-3.124 10.043 10.043 0 0 1 2.046-3.543A3.993 3.993 0 0 0 8 5.071a3.993 3.993 0 0 0 1.954-2.86zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+      </button>
+      <div class="server-info">
+        <span id="serverInfo">Connect to Ollama</span>
+      </div>
+    </div>
+
+    <div class="error-container" id="errorContainer">
+      <div class="error-message" id="errorMessage"></div>
+      <button id="dismissErrorBtn">Dismiss</button>
+    </div>
+  </div>
+
+  <script src="../scripts/popup.js"></script>
+</body>
+</html> 
